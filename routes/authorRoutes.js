@@ -1,15 +1,14 @@
 const express = require("express");
 const authorController = require("../controller/authorController");
-const { isAdmin, isOwned, isBuyer } = require("../middleware/auth");
 const { validateToken } = require("../jwt/index");
 
 const router = express.Router();
 router.use(validateToken);
 
-router.post("/", isAdmin, isBuyer, authorController.addAuthor);
-router.get("/", isAdmin, isOwned, isBuyer, authorController.getAllAuthor);
-router.get("/:id", isAdmin, isOwned, isBuyer, authorController.getOneAuthor);
-router.put("/:id", isAdmin, authorController.updateAuthor);
-router.delete("/:id", isAdmin, authorController.deleteAuthor);
+router.post("/author", authorController.addAuthor);
+router.get("/author", authorController.getAllAuthor);
+router.get("/author/:id", authorController.getOneAuthor);
+router.put("/author/:id", authorController.updateAuthor);
+router.delete("/author/:id", authorController.deleteAuthor);
 
 module.exports = router;

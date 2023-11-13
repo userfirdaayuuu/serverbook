@@ -16,7 +16,7 @@ class bookController {
       const book = await Book.findAll()
       res.status(200).json(book);
     } catch (error) {
-      next(error);
+      next(error)
     }
   }
 

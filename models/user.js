@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
   User.init({
     name: {
       type: DataTypes.STRING,
-      validate:{
-        len: [1,255],
+      validate: {
+        len: [1, 255],
         notEmpty: true,
       },
     },
@@ -25,27 +25,9 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     password: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       validate: {
-        len: [8,20],
-        notEmpty: true,
-      },
-    },
-    isAdmin: {
-      type: DataTypes.BOOLEAN,
-      validate:{
-        notEmpty: true,
-      },
-    },
-    isOwned: {
-      type: DataTypes.BOOLEAN,
-      validate:{
-        notEmpty: true,
-      },
-    },
-    isBuyer: {
-      type: DataTypes.BOOLEAN,
-      validate:{
+        len: [8, 20],
         notEmpty: true,
       },
     },
@@ -55,14 +37,10 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   // hooks hash password
-  User.beforeCreate((user, options) => {
-    return bcrypt.hash(user.password, 10)
-      .then(hash => {
-        user.password = hash;
-      })
-      .catch(err => {
-        throw new Error(err);
-      });
+
+  User.beforeCreate(async (user, options) => {
+    const hashedPassword = await bcrypt.hash(user.password, 10);
+    user.password = hashPassword;
   });
 
   return User;

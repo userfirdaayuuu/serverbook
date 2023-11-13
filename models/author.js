@@ -19,27 +19,9 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     description: {
-      type: DataTypes.TEXT,
-      validate:{
-        len: [1,255],
-        notEmpty: true,
-      },
-    },
-    bornDate: {
-      type: DataTypes.DATE,
-      validate:{
-        notEmpty: true,
-      },
-    },
-    domicile: {
-      type: DataTypes.TEXT,
-      validate:{
-        notEmpty: true,
-      },
-    },
-    contact: {
       type: DataTypes.STRING,
       validate:{
+        len: [1,255],
         notEmpty: true,
       },
     },

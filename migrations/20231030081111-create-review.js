@@ -15,7 +15,7 @@ module.exports = {
       },
       description: {
         allowNull: false,
-        type: Sequelize.TEXT
+        type: Sequelize.STRING
       },
       rating: {
         allowNull: false,

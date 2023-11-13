@@ -15,18 +15,6 @@ module.exports = {
       },
       description: {
         allowNull: false,
-        type: Sequelize.TEXT
-      },
-      bornDate: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      domicile: {
-        allowNull: false,
-        type: Sequelize.TEXT
-      },
-      contact: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {

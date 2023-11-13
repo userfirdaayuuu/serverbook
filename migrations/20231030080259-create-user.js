@@ -20,19 +20,7 @@ module.exports = {
       },
       password: {
         allowNull: false,
-        type: Sequelize.TEXT
-      },
-      isAdmin: {
-        allowNull: false,
-        type: Sequelize.BOOLEAN
-      },
-      isOwned: {
-        allowNull: false,
-        type: Sequelize.BOOLEAN
-      },
-      isBuyer: {
-        allowNull: false,
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,

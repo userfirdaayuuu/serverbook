@@ -19,8 +19,7 @@ module.exports = {
       },
       genre: {
         allowNull: false,
-        type: Sequelize.ENUM,
-        values: ['biografi', 'autobiografi', 'motivasi', 'literatur'],
+        type: Sequelize.STRING,
       },
       authorId: {
         allowNull: false,

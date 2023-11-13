@@ -6,10 +6,10 @@ const bookController = require("../controller/bookController");
 const router = express.Router();
 // router.use(validateToken);
 
-router.post("/", bookController.addBook);
-router.get("/", bookController.getAllBook);
-router.get("/:id", bookController.getOneBook);
-router.put("/:id", bookController.updateBook)
-router.delete("/:id", bookController.deleteBook)
+router.post("/book", bookController.addBook);
+router.get("/book", bookController.getAllBook);
+router.get("/book/:id", bookController.getOneBook);
+router.put("/book/:id", bookController.updateBook)
+router.delete("/book/:id", bookController.deleteBook)
 
 module.exports = router;

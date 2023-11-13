@@ -31,8 +31,10 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     genre: {
-      type: DataTypes.ENUM,
-      values: ['biografi', 'autobiografi', 'motivasi', 'literatur'],
+      type: DataTypes.STRING,
+      validate:{
+        len: [1,255],
+      },
     },
     authorId: DataTypes.INTEGER
   }, {
